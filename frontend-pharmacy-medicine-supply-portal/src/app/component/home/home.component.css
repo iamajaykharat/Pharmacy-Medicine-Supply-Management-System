@@ -1,0 +1,75 @@
+
+.banner-area {
+  min-height: 600px;
+  background-color: rgba(255, 255, 255, 0.09);
+  background-image: url('/assets/images/home-banner-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .banner-area {
+    min-height: 500px;
+  }
+}
+.banner-area h1 {
+  font-size: 45px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .banner-area h1 {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .banner-area p {
+    padding-right: 113px;
+  }
+}
+.banner-area .main_btn {
+  margin-right: 10px;
+}
+@media (max-width: 575px) {
+  .banner-area .main_btn {
+    margin-bottom: 10px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  padding: .75rem 2rem;
+  font-family: "Exo", sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: all .35s ease;
+}
+
+  .btn-main-2 {
+    background: #21b321;
+    color: #fff;
+    border-color: #21b321;
+  }
+  
+  .btn-main-2:hover {
+    background: #223a66;
+    color: #fff;
+    border-color: #223a66;
+  }
+
+  .btn-round-full {
+    border-radius: 50px;
+  }
+
+
+
+
+

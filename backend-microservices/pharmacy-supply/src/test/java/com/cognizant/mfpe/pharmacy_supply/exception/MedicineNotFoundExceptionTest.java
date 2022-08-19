@@ -1,0 +1,29 @@
+package com.cognizant.mfpe.pharmacy_supply.exception;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class MedicineNotFoundExceptionTest {
+	
+	@Mock
+	private MedicineNotFoundException medicineNotFoundException;
+
+	@Test
+	public void testOneArgConstructor() {
+		MedicineNotFoundException medicineNotFoundException = new MedicineNotFoundException("Medicine not found.");
+		assertEquals("Medicine not found.", medicineNotFoundException.getMessage());
+	}
+	
+	@Test
+	public void testNoArgsConstructor() {
+		MedicineNotFoundException exception = new MedicineNotFoundException();
+		assertEquals(null, exception.getMessage());
+	}
+}

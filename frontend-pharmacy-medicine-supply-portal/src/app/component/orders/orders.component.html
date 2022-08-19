@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="section-title text-center">
+        <h2 class="mb-4">Placed Orders</h2>
+        <div class="divider mx-auto my-4"></div>
+        <div class="mt-5" *ngIf="!orders.length">
+          <h5>No Order Placed</h5>
+          <h6 class="text-muted">
+            To place order click on the below link
+          </h6>
+          <button class="btn btn-main-2 btn-icon btn-round-full text-light mt-4" routerLink="/place-order">
+            Place Order
+          </button>
+    </div>   
+</div>
+
+        <div class="container mt-5" *ngIf="orders.length">
+          <div class="table-responsive">
+            <nav class="navbar navbar-light ">
+              <a class="navbar-brand"></a>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchContent" name="search"  placeholder="Search" aria-label="Search" >
+              </form>
+            </nav>
+            <table class="table table-hover text-center table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Pharmacy Name</th>
+                  <th scope="col">Medicine Name</th>
+                  <th scope="col">Supply Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr *ngFor="let order of orders | filterSearch : searchContent | paginate: { itemsPerPage: 5, currentPage: p}">
+                    <th scope="row">{{ order.pharmacyName}}</th>
+                    <td>{{order.medicineName}}</td>
+                    <td >{{order.supplyCount}}</td>
+                  </tr>
+              
+              </tbody>
+            </table>
+            <hr>
+          <pagination-controls class="my-pagination" (pageChange)="p = $event" class="float-right"></pagination-controls> 
+          </div>
+        </div>
+        

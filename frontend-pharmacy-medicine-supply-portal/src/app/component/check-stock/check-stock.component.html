@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="section-title text-center">
+        <h2 class="mb-4">Medicine Availability</h2>
+        <div class="divider mx-auto my-4"></div>
+    </div>   
+</div>
+<div class="container">
+          <table class="table table-hover table-responsive">
+            <nav class="navbar navbar-light ">
+              <a class="navbar-brand"></a>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchContent" name="search"  placeholder="Search" aria-label="Search" >
+              </form>
+            </nav>
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col" >Chemical Composition</th>
+                <th scope="col">Target Ailment</th>
+                <th scope="col">Availability Location</th>
+                <th scope="col">Date of Expiry</th>
+                <th scope="col">Stock</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr *ngFor="let medicine of medicineDetails | stockfilter: searchContent | paginate: { itemsPerPage: 5, currentPage: p}">
+                  <th scope="row">{{ medicine.medicineId}}</th>
+                  <td>{{medicine.medicineName}}</td>
+                  <td >{{medicine.chemicalComposition}}</td>
+                  <td>{{medicine.targetAilment}}</td>
+                  <td>{{medicine.pharmacyName}}</td>
+                  <td>{{medicine.dateOfExpiry | date}}</td>
+                  <td>{{medicine.numberOfTabletsInStock}}</td>
+                </tr>
+            
+            
+            </tbody>
+          </table>
+          <hr>
+          <pagination-controls class="my-pagination" (pageChange)="p = $event" class="float-right"></pagination-controls> 
+        </div>

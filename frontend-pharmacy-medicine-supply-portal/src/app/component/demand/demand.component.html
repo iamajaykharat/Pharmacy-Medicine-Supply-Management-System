@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <div class="section-title text-center">
+        <h2 class="mb-4">Demand Details</h2>
+        <div class="divider mx-auto my-4"></div>
+        
+        <div class="mt-5" *ngIf="!demandDetails.length">
+          <h5>No Demands</h5>
+          <h6 class="text-muted">
+            Its seems like there is no medicine demand.
+          </h6>
+          <button class="btn btn-main-2 btn-icon btn-round-full text-light mt-4" routerLink="/place-order">
+            Place Order
+          </button>
+    </div>   
+</div>
+<h6 class="text-muted text-center" *ngIf="demandDetails.length">
+    Here is list of medicine that are been demanded 
+  </h6>
+        <div class="container mt-5" *ngIf="demandDetails.length">
+            
+          <div class="table-responsive">
+            <nav class="navbar navbar-light ">
+              <a class="navbar-brand"></a>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchContent" name="search"  placeholder="Search" aria-label="Search" >
+              </form>
+            </nav>
+            <table class="table table-hover text-center table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Medicine Name</th>
+                  <th scope="col">Demand Count</th>
+                  <th scope="col">Demand Fulfilled</th>
+                  <th scope="col">Demand Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr *ngFor="let demand of demandDetails | demandFilter : searchContent | paginate: { itemsPerPage: 5, currentPage: p}">
+                    <th scope="row">{{ demand.medicineName}}</th>
+                    
+                    <td >{{demand.demandCount}}</td>
+                    <td >{{demand.fulfilled}}</td>
+                    <td >{{demand.demandDate | date}}</td>
+                  </tr>
+              
+              </tbody>
+            </table>
+            <hr>
+          <pagination-controls class="my-pagination" (pageChange)="p = $event" class="float-right"></pagination-controls> 
+          </div>
+        </div>
+        

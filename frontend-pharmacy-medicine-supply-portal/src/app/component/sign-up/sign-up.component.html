@@ -1,0 +1,158 @@
+<div id="main-wrapper" style="height:837px" class="oxyy-login-register bg-dark">
+  <div class="container" style="padding-top: 110px">
+    <div class="row no-gutters min-vh-100 py-5">
+      <!-- Welcome Text
+      ========================= -->
+      <div class="col-lg-7 shadow-lg">
+        <div
+          class="
+            hero-wrap
+            d-flex
+            align-items-center
+            rounded-lg rounded-right-0
+            h-100
+          "
+        >
+          <div class="hero-mask opacity-6 bg-primary"></div>
+          <div
+            class="hero-bg hero-bg-scroll"
+            style="background-image: url('assets/images/pic.jpg')"
+          ></div>
+          <div class="hero-content mx-auto w-100 h-100 d-flex flex-column text-center">
+            <div class="row no-gutters">
+              <div class="col-10 col-lg-10 mx-auto">
+                <div class="logo mt-5 mb-5 mb-lg-0">
+                  <a href="/signin"
+                    ><p class="text-dark mb-5 text-11">PMSMS</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="row no-gutters my-auto">
+                <div class="col-10 col-lg-10 mx-auto">
+                  <h1 class="text-11 text-white mb-3">Welcome!</h1>
+                  <p class="text-5 text-white line-height-4 mb-5"><em>
+                    <b>"It is easy to get a thousand prescriptions but hard to get one single remedy."</b></em>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Welcome Text End -->
+
+      <!-- Login Form
+      ========================= -->
+      <div
+        class="
+          col-lg-5
+          shadow-lg
+          d-flex
+          align-items-center
+          rounded-lg rounded-left-0
+          bg-light
+        "
+      >
+        <div class="container my-auto py-5">
+          <div class="row">
+            <div class="col-11 col-lg-10 mx-auto">
+              <h3 class="text-dark text-center mb-4">Sign Up</h3>
+              <form id="loginForm" #f="ngForm" (ngSubmit)="signUp(f)" class="form-light">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"            
+                    minlength="3"
+                    maxlength="30"
+                    ngModel
+                    pattern="^[a-zA-Z ]+$"
+                    #name="ngModel"
+                    required
+                    placeholder="Enter Name"
+                  />
+                  <div *ngIf="name.touched && !name.valid">
+                    <small class="form-text text-2  text-danger" *ngIf="name.errors?.required">Required</small>
+                    <small class="form-text text-2  text-danger" *ngIf="name.errors?.minlength">Name must contain atleast 3 character</small>
+                    <small class="form-text text-2 text-danger" *ngIf="name.errors?.pattern">Name must not contain number</small>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    ngModel
+                    minlength="5"
+                    pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                    #email="ngModel"
+                    required
+                    placeholder="Enter email"
+                  />
+                  <div *ngIf="email.touched && !email.valid">
+                    <small class="form-text  text-danger" *ngIf="email.errors?.required">Required</small>
+                    <small class="form-text  text-danger" *ngIf="email.errors?.minlength">Email must contain atleast 5 character</small>
+                    <small class="form-text  text-danger" *ngIf="email.errors?.pattern">Enter a valid email</small>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    ngModel
+                    minlength="4"
+                    #username="ngModel"
+                    required
+                    placeholder="Enter Username"
+                  />
+                  <div *ngIf="username.touched && !username.valid">
+                    <small class="form-text text-2  text-danger" *ngIf="username.errors?.required">Required</small>
+                    <small class="form-text text-2 text-danger" *ngIf="username.errors?.required">Username must contain atleast 5 character</small>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    ngModel
+                    #password="ngModel"
+                    required
+                    placeholder="Enter Password"
+                  />
+                  <div *ngIf="password.touched && !password.valid">
+                    <small class="form-text text-2 text-danger" *ngIf="password.errors?.required">Required</small>
+                  </div>
+                </div>
+        
+                <small class="form-text text-center text-2 text-danger" [(ngModel)]="errorResponse" *ngIf="errorResponse">Username already exists</small>
+                
+                <button [disabled]='!f.valid' class="btn btn-success btn-block my-4" type="submit">
+                  Sign Up
+                </button>
+              </form>
+              <hr>
+              <p class="text-2 text-center text-dark mt-2">
+                Already have an account?
+                <a class="btn-link" routerLink="/signin">Sign In</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-3">
+
+      </div>
+      <!-- Login Form End -->
+    </div>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

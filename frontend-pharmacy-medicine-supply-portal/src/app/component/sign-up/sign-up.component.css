@@ -1,0 +1,420 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background: #f1f3f6;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+img {
+  vertical-align: inherit;
+}
+
+a,
+a:focus {
+  color: #2a0a66;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a:active {
+  color: #2a0a66;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+a:focus,
+a:active,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+button:focus,
+button:active {
+  outline: none;
+}
+
+p {
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #252b33;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =================================== */
+/*  2. Helpers Classes
+  /* =================================== */
+/* Box Shadow */
+.oxyy-login-register .shadow-md {
+  -webkit-box-shadow: 0px 0px 50px -35px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0px 0px 50px -35px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Text Size */
+.oxyy-login-register .text-0 {
+  font-size: 11px !important;
+  font-size: 0.6875rem !important;
+}
+.oxyy-login-register .text-1 {
+  font-size: 12px !important;
+  font-size: 0.75rem !important;
+}
+.oxyy-login-register .text-2 {
+  font-size: 14px !important;
+  font-size: 0.875rem !important;
+}
+.oxyy-login-register .text-3 {
+  font-size: 16px !important;
+  font-size: 1rem !important;
+}
+.oxyy-login-register .text-4 {
+  font-size: 18px !important;
+  font-size: 1.125rem !important;
+}
+.oxyy-login-register .text-5 {
+  font-size: 21px !important;
+  font-size: 1.3125rem !important;
+}
+.oxyy-login-register .text-6 {
+  font-size: 24px !important;
+  font-size: 1.5rem !important;
+}
+.oxyy-login-register .text-7 {
+  font-size: 28px !important;
+  font-size: 1.75rem !important;
+}
+.oxyy-login-register .text-8 {
+  font-size: 32px !important;
+  font-size: 2rem !important;
+}
+.oxyy-login-register .text-9 {
+  font-size: 36px !important;
+  font-size: 2.25rem !important;
+}
+.oxyy-login-register .text-10 {
+  font-size: 40px !important;
+  font-size: 2.5rem !important;
+}
+.oxyy-login-register .text-11 {
+  font-size: 2.75rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-11 {
+    font-size: calc(1.4rem + 1.8vw) !important;
+  }
+}
+.oxyy-login-register .text-12 {
+  font-size: 3rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-12 {
+    font-size: calc(1.425rem + 2.1vw) !important;
+  }
+}
+.oxyy-login-register .text-13 {
+  font-size: 3.25rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-13 {
+    font-size: calc(1.45rem + 2.4vw) !important;
+  }
+}
+.oxyy-login-register .text-14 {
+  font-size: 3.5rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-14 {
+    font-size: calc(1.475rem + 2.7vw) !important;
+  }
+}
+.oxyy-login-register .text-15 {
+  font-size: 3.75rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-15 {
+    font-size: calc(1.5rem + 3vw) !important;
+  }
+}
+.oxyy-login-register .text-16 {
+  font-size: 4rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-16 {
+    font-size: calc(1.525rem + 3.3vw) !important;
+  }
+}
+.oxyy-login-register .text-17 {
+  font-size: 4.5rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-17 {
+    font-size: calc(1.575rem + 3.9vw) !important;
+  }
+}
+.oxyy-login-register .text-18 {
+  font-size: 5rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-18 {
+    font-size: calc(1.625rem + 4.5vw) !important;
+  }
+}
+.oxyy-login-register .text-19 {
+  font-size: 5.25rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-19 {
+    font-size: calc(1.65rem + 4.8vw) !important;
+  }
+}
+.oxyy-login-register .text-20 {
+  font-size: 5.75rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-20 {
+    font-size: calc(1.7rem + 5.4vw) !important;
+  }
+}
+.oxyy-login-register .text-21 {
+  font-size: 6.5rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-21 {
+    font-size: calc(1.775rem + 6.3vw) !important;
+  }
+}
+.oxyy-login-register .text-22 {
+  font-size: 7rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-22 {
+    font-size: calc(1.825rem + 6.9vw) !important;
+  }
+}
+.oxyy-login-register .text-23 {
+  font-size: 7.75rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-23 {
+    font-size: calc(1.9rem + 7.8vw) !important;
+  }
+}
+.oxyy-login-register .text-24 {
+  font-size: 8.25rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-24 {
+    font-size: calc(1.95rem + 8.4vw) !important;
+  }
+}
+.oxyy-login-register .text-25 {
+  font-size: 9rem !important;
+}
+@media (max-width: 1200px) {
+  .oxyy-login-register .text-25 {
+    font-size: calc(2.025rem + 9.3vw) !important;
+  }
+}
+.oxyy-login-register .text-11,
+.oxyy-login-register .text-12,
+.oxyy-login-register .text-13,
+.oxyy-login-register .text-14,
+.oxyy-login-register .text-15,
+.oxyy-login-register .text-16,
+.oxyy-login-register .text-17,
+.oxyy-login-register .text-18,
+.oxyy-login-register .text-19,
+.oxyy-login-register .text-20,
+.oxyy-login-register .text-21,
+.oxyy-login-register .text-22,
+.oxyy-login-register .text-23,
+.oxyy-login-register .text-24,
+.oxyy-login-register .text-25 {
+  line-height: 1.3;
+}
+
+/* Line height */
+.oxyy-login-register .line-height-07 {
+  line-height: 0.7 !important;
+}
+.oxyy-login-register .line-height-1 {
+  line-height: 1 !important;
+}
+.oxyy-login-register .line-height-2 {
+  line-height: 1.2 !important;
+}
+.oxyy-login-register .line-height-3 {
+  line-height: 1.4 !important;
+}
+.oxyy-login-register .line-height-4 {
+  line-height: 1.6 !important;
+}
+.oxyy-login-register .line-height-5 {
+  line-height: 1.8 !important;
+}
+
+/* Font Weight */
+.oxyy-login-register .font-weight-100 {
+  font-weight: 100 !important;
+}
+.oxyy-login-register .font-weight-200 {
+  font-weight: 200 !important;
+}
+.oxyy-login-register .font-weight-300 {
+  font-weight: 300 !important;
+}
+.oxyy-login-register .font-weight-400 {
+  font-weight: 400 !important;
+}
+.oxyy-login-register .font-weight-500 {
+  font-weight: 500 !important;
+}
+.oxyy-login-register .font-weight-600 {
+  font-weight: 600 !important;
+}
+.oxyy-login-register .font-weight-700 {
+  font-weight: 700 !important;
+}
+.oxyy-login-register .font-weight-800 {
+  font-weight: 800 !important;
+}
+.oxyy-login-register .font-weight-900 {
+  font-weight: 900 !important;
+}
+
+/* Opacity */
+.oxyy-login-register .opacity-0 {
+  opacity: 0;
+}
+.oxyy-login-register .opacity-1 {
+  opacity: 0.1;
+}
+.oxyy-login-register .opacity-2 {
+  opacity: 0.2;
+}
+.oxyy-login-register .opacity-3 {
+  opacity: 0.3;
+}
+.oxyy-login-register .opacity-4 {
+  opacity: 0.4;
+}
+.oxyy-login-register .opacity-5 {
+  opacity: 0.5;
+}
+.oxyy-login-register .opacity-6 {
+  opacity: 0.6;
+}
+.oxyy-login-register .opacity-7 {
+  opacity: 0.7;
+}
+.oxyy-login-register .opacity-8 {
+  opacity: 0.8;
+}
+.oxyy-login-register .opacity-9 {
+  opacity: 0.9;
+}
+.oxyy-login-register .opacity-10 {
+  opacity: 1;
+}
+
+#main-wrapper.oxyy-login-register {
+  background: #fff;
+}
+
+.oxyy-login-register .section {
+  position: relative;
+  padding: 4.5rem 0;
+  overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  .oxyy-login-register .section {
+    padding: 3.5rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .oxyy-login-register .container {
+    max-width: 1170px !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .oxyy-login-register .modal .close {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+  }
+}
+
+/* =================================== */
+/*  4. Elements
+  /* =================================== */
+/*=== 4.1 Hero Background ===*/
+.oxyy-login-register .hero-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.oxyy-login-register .hero-wrap .hero-mask,
+.oxyy-login-register .hero-wrap .hero-bg,
+.oxyy-login-register .hero-wrap .hero-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.oxyy-login-register .hero-wrap .hero-mask {
+  z-index: 1;
+}
+.oxyy-login-register .hero-wrap .hero-content {
+  position: relative;
+  z-index: 2;
+}
+.oxyy-login-register .hero-wrap .hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.oxyy-login-register .hero-wrap .hero-bg-slideshow {
+  z-index: 0;
+}
+.oxyy-login-register .hero-wrap .hero-bg {
+  z-index: 0;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  transition: background-image 300ms ease-in 200ms;
+}
+.oxyy-login-register .hero-wrap .hero-bg.hero-bg-scroll {
+  background-attachment: scroll;
+}
+.oxyy-login-register .hero-wrap .hero-bg-slideshow .hero-bg {
+  background-attachment: inherit;
+}
+
+.oxyy-login-register .form-control:not(.form-control-sm) {
+  padding: 0.81rem 0.96rem;
+  height: inherit;
+}

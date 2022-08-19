@@ -1,0 +1,44 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: authorization-microservice
+          uri: lb://authorization-microservice
+          predicates:
+            - Path=/auth/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback
+            - StripPrefix=1
+        - id: medical-representative-schedule-service
+          uri: lb://medical-representative-schedule-service
+          predicates:
+            - Path=/representative/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback
+            - StripPrefix=1
+        - id: medicine-stock-microservice
+          uri: lb://medicine-stock-microservice
+          predicates:
+            - Path=/medicine/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback
+            - StripPrefix=1
+        - id: pharmacy-supply-microservice
+          uri: lb://pharmacy-supply-microservice
+          predicates:
+            - Path=/pharmacy/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback
+            - StripPrefix=1

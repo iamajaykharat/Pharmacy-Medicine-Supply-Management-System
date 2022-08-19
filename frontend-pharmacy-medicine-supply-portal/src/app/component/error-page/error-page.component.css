@@ -1,0 +1,8 @@
+.btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}

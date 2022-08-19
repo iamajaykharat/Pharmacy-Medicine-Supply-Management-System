@@ -1,0 +1,139 @@
+<div id="main-wrapper" class="oxyy-login-register bg-dark h-150">
+  <div class="container" style="padding-top: 100px;">
+    <div class="row no-gutters min-vh-100 py-5">
+      
+      <div class="col-lg-7 shadow-lg">
+        <div class="hero-wrap d-flex align-items-center h-100">
+          <div class="hero-mask opacity-6 bg-primary"></div>
+          <div
+            class="hero-bg hero-bg-scroll"
+            style="background-image: url('assets/images/pic.jpg')"
+          ></div>
+          <div class="hero-content mx-auto w-100 h-100 d-flex flex-column text-center">
+            <div class="row no-gutters">
+              <div class="col-10 col-lg-10 mx-auto">
+                <div class="logo mt-5 mb-5 mb-lg-0">
+                  <a href=""
+                    ><p class="text-dark mb-5 text-11">PMSMS</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="row no-gutters my-auto">
+                <div class="col-10 col-lg-10 mx-auto">
+                  <h1 class="text-11 text-white mb-3">Welcome back!</h1>
+                  <p class="text-5 text-white line-height-4 mb-5">
+                    <em>
+                      <b
+                        >"It is easy to get a thousand prescriptions but hard to
+                        get one single remedy."</b
+                      ></em
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Welcome Text End -->
+      <!-- Login Form
+        ========================= -->
+      <div
+        class="
+          col-lg-5
+          shadow-lg
+          d-flex
+          align-items-center
+          rounded-lg rounded-left-0
+          bg-light
+        "
+      >
+        <div class="container my-auto py-5">
+          <div class="row">
+            <div class="col-11 col-lg-10 mx-auto">
+              <h3 class="text-dark text-center mb-4">Sign In</h3>
+              <form
+                id="loginForm"
+                #f="ngForm"
+                (ngSubmit)="signIn(f)"
+                class="form-light"
+                method="post"
+              >
+                <div class="form-group">
+                  <label class="text-dark" for="username">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    ngModel
+                    #username="ngModel"
+                    id="username"
+                    required
+                    placeholder="Enter Username"
+                  />
+                  <div *ngIf="username.touched && !username.valid">
+                    <small class="form-text text-2 text-danger" *ngIf="username.errors?.required">Required</small>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="text-dark" for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    ngModel
+                    #password="ngModel"
+                    id="password"
+                    required
+                    placeholder="Enter Password"
+                  />
+                  <div *ngIf="password.touched && !password.valid">
+                    <small class="form-text text-2 text-danger" *ngIf="password.errors?.required">Required</small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <div
+                      class="form-check text-2 custom-control custom-checkbox"
+                    >
+                      <input
+                        id="rememberMe"
+                        name="rememberMe"
+                        ngModel
+                        #rememberMe="ngModel"
+                        class="custom-control-input"
+                        type="checkbox"
+                      />
+                      <label
+                        class="custom-control-label text-dark "
+                        for="rememberMe"
+                        >Remember Me</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="btn btn-success btn-block my-4" [disabled]='!f.valid' type="submit">
+                  Sign In
+                </button>
+                <small class="form-text text-2 alert text-center text-danger" [(ngModel)]="errorResponse" *ngIf="errorResponse">Invalid Credentials</small>
+                
+              </form>
+              <div class="div">{{ f.errors }}</div>
+              <p class="text-2 text-center text-dark">
+                Don't have an account?
+                <a class="btn-link" routerLink="/signup">Sign Up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-3">
+
+      </div>
+      <!-- Login Form End -->
+    </div>
+  </div>
+</div>

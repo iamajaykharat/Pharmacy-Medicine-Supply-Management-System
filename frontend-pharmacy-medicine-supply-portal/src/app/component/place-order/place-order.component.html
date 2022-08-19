@@ -1,0 +1,58 @@
+<div class="container mt-5 show">
+    <div class="section-title text-center justify-content-center">
+        <h2 class="mb-4">Place Order</h2>
+        <div class="divider mx-auto my-4"></div>
+        <div class="mt-5">
+            <h6 class="text-muted">Fill the details to place an order</h6>
+        </div>
+
+        <!-- <form class="form-inline d-flex justify-content-center" #f="ngForm" (ngSubmit)="placeOrder(f)">
+              
+                <select ngModel #medicineName="ngModel" name="medicinesList" class="custom-select  col-3" id="inlineFormCustomSelect" required>
+                    <option selected>Choose Medicine...</option>
+                    <option *ngFor="let medicine of medicineStock" [ngValue]="medicine">{{medicine.medicineName}}</option>
+                  </select>
+                <input type="number" ngModel #date="ngModel" name="demandCount" id="demandCount" [min]=0 placeholder="Demand Count" class="form-control col-3 center-block " required>
+                <div class="d-inline p-2 px-4 mr-2 bg-primary text-white">Add</div>
+                <div class="d-inline p-2 bg-danger text-white">Remove</div>
+            
+                <button class="btn btn-main-2 btn-icon btn-round-full text-light mt-4 text-center">
+                    Place Order
+                  </button>
+             
+          </form> -->
+
+          <form class="form-inline" #f="ngForm"  (ngSubmit)="placeOrder()" class="form mt-4">
+            <div class="row justify-content-center">
+                <div class="col-6">
+        
+                    <div class="container mb-2" *ngFor="let order of orders; let i = index;">
+                       
+                        <div class="row">
+                            <div class="col-4 align-self-center">
+                                <select [(ngModel)]="order.medicineName" #medicine="ngModel" name="medicines{{i}}" class="custom-select" id="inlineFormCustomSelect" required>
+                                    <option selected>Choose Medicine...</option>
+                                    <option *ngFor="let medicine of medicineStock" [ngValue]="medicine.medicineName">{{medicine.medicineName}}</option>
+                                  </select>
+                            </div>
+                              <div class="col-4 mt-2 align-self-center">
+                                  <input type="number" [(ngModel)]="order.demandCount" #demandCount="ngModel" name="demandCount{{i}}" id="demandCount" [min]=0 placeholder="Demand Count" class=" align-self-center form-control mb-2 mr-sm-2" required>
+                              </div>
+                              <div class="col-3 align-self-center">
+                                  
+                                  <div class="d-inline p-2 px-4 mr-2 bg-success text-white" (click)="addOrder(medicine.value,demandCount.value)">Add</div>
+                                
+                                  <div class="d-inline p-2 bg-danger text-white" (click)="removeOrder(i)">Remove</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="text-center m-5">
+                        <input type="submit" [disabled]="!f.valid" class="btn btn-main-2 btn-round-full text-light" value="Submit" />
+                    </div>
+        
+                </div>
+            </div>
+        
+        </form>
+    </div>   
+</div>   

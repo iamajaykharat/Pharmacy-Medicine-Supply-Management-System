@@ -1,0 +1,58 @@
+<div class="container mt-5 show">
+  <div class="section-title text-center">
+    <h2 class="mb-4">Medical Representative Schedule</h2>
+    <div class="divider mx-auto my-4"></div>
+    <div class="mt-5">
+      <h5>Select date</h5>
+      <h6 class="text-muted">
+        To view the schedule for Medical Representative
+      </h6>
+    </div>
+    <form #f="ngForm" (ngSubmit)="schedule(f)" class="form mt-4">
+      <div class="form-group">
+        <input
+          type="date"
+          ngModel
+          #date="ngModel"
+          name="scheduleDate"
+          min="{{currentDate | date:'yyyy-MM-dd'}}"
+          id="scheduleDate"
+          class="form-control col-6 center-block"
+          required
+        />
+      </div>
+      <button [disabled]="!f.valid" class="btn btn-main-2 btn-icon btn-round-full text-light mt-4">
+        Schedule
+      </button>
+    </form>
+  </div>
+</div>
+<div id="target" class="container" *ngIf="mrSchedules">
+  <table class="table table-responsive table-hover text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Representative Name</th>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Meeting Date</th>
+        <th scope="col">Meeting Slot</th>
+        <th scope="col">Doctor Contact Number</th>
+        <th scope="col">Medicines</th>
+        <th scope="col">Treating Ailment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let schedule of mrSchedules" >
+        <th scope="row">{{ schedule.id }}</th>
+        <td>{{ schedule.repName | titlecase }}</td>
+        <td>{{ schedule.doctorName }}</td>
+        <td>{{ schedule.meetingDate | date }}</td>
+        <td>{{ schedule.meetingSlot }}</td>
+        <td>{{ schedule.doctorContactNumber }}</td>
+        <td>{{ schedule.medicines }}</td>
+        <td>{{ schedule.treatingAilment }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+</div>
